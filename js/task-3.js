@@ -1,57 +1,25 @@
- // Write code under this line
-class Storage {
-constructor(items){
-  this.items = items;
-}
-  getItems(){
-  return this.items}
-  
-  addItem(item){
-  this.items.push(item)
-  return this.items}
-  
-  removeItem(item){
-  if (this.items.indexOf(item)!==-1){
-  this.items.splice(this.items.indexOf(item),1)}
-    return this.items}
-}  
-
-console.log(typeof Storage);
-// 'function'
-
-const goods = [
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор'
+const gallery = document.getElementById('gallery');
+const images = [
+  {
+    url:
+      'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
+  },
+  {
+    url:
+      'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+  },
+  {
+    url:
+      'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
+  },
 ];
 
-const storage = new Storage(goods);
+const createGallery = images.reduce((acc,image) => 
+      acc +`<li class='gallery-item'><img class='image' src="${image.url}" alt="${image.alt}"</li>`,[]
+)
+gallery.insertAdjacentHTML("afterbegin", createGallery)
 
-console.log(storage.getItems());
-/* [
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор'
-] */
-
-storage.addItem('Дроид');
-console.log(storage.getItems());
-/* [
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор',
-  'Дроид'
-] */
-
-storage.removeItem('Пролонгер');
-console.log(storage.getItems());
-/* [
-  'Нанитоиды',
-  'Железные жупи',
-  'Антигравитатор',
-  'Дроид'
-] */
-
+// console.log(gallery);
