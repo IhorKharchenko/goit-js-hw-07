@@ -1,5 +1,5 @@
-const ingredientsList = document.getElementById('ingredients')
-// console.log(ingredientsList)
+const ingredientsList = document.getElementById('ingredients');
+// console.log(ingredientsList);
 const ingredients = [
   'Картошка',
   'Грибы',
