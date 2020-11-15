@@ -1,38 +1,22 @@
- // Write code under this line
-class StringBuilder {
-constructor(value){
-this._value = value;
-}
-  get value(){
-  return this._value;
-  }
-  
-  append(str){
-  return this._value+=str;
-  }
-  
-  prepend(str){
-  this._value = str + this._value;
-    return this._value;
-  }
-  
-  pad(str){
-this.append(str);
-this.prepend(str);
-  }
-}  
+const counter = document.getElementById('counter');
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
+const value = document.getElementById('value');
 
-console.log(typeof StringBuilder);
-// 'function'
+let counterValue = 0;
 
+decrementBtn.addEventListener('click', () => {
+  decrement();
+});
+incrementBtn.addEventListener('click', () => {
+  increment();
+});
 
- const builder = new StringBuilder('.');
-
- builder.append('^');
-console.log(builder.value); // '.^'
-
-builder.prepend('^');
-console.log(builder.value); // '^.^'
-
-builder.pad('=');
-console.log(builder.value); // '=^.^='
+const increment = () => {
+  counterValue += 1;
+  value.textContent = counterValue;
+};
+const decrement = () => {
+  counterValue -= 1;
+  value.textContent = counterValue;
+};
