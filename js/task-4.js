@@ -5,13 +5,6 @@ const value = document.getElementById('value');
 
 let counterValue = 0;
 
-decrementBtn.addEventListener('click', () => {
-  decrement();
-});
-incrementBtn.addEventListener('click', () => {
-  increment();
-});
-
 const increment = () => {
   counterValue += 1;
   value.textContent = counterValue;
@@ -20,3 +13,6 @@ const decrement = () => {
   counterValue -= 1;
   value.textContent = counterValue;
 };
+
+decrementBtn.addEventListener('click', decrement);
+incrementBtn.addEventListener('click', increment);

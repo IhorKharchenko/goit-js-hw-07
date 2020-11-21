@@ -18,6 +18,6 @@ const images = [
 ];
 
 const createGallery = images.reduce((acc, image) =>
-  acc + `<li class='gallery-item'><img class='image' src="${image.url}" alt="${image.alt}"</li>`, []
+  acc + `<li class='gallery-item'><img class='image' src="${image.url}" alt="${image.alt}"</li>`, ''
 );
 gallery.insertAdjacentHTML("afterbegin", createGallery);
